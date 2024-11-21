@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 20:54:30 by jihyjeon          #+#    #+#             */
-/*   Updated: 2024/11/21 21:27:52 by jihyjeon         ###   ########.fr       */
+/*   Created: 2024/11/21 21:48:14 by jihyjeon          #+#    #+#             */
+/*   Updated: 2024/11/21 21:58:54 by jihyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
-{
-	this->name = name;
-	std::cout << "Zombie " << name << " is born\n";
-}
+/*
+* allocate N Zombie objects in a single allocation. 
+* Then, it has to initialize the zombies, giving each one of them the name passed as parameter. 
+* The function returns a pointer to the first zombie.
+*/
 
-//print a message with the name of the zombie for debugging purposes
-Zombie::~Zombie(void)
+Zombie*	zombieHorde(int N, std::string name)
 {
-	std::cout << "Zombie \"" << name << "\" has been destroyed\n";
-}
+	Zombie* ZombHorde = new Zombie[N];
 
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	for (int i = 0; i < N; i++)
+		ZombHorde[i].setName(name);
+
+	return (ZombHorde);
 }
