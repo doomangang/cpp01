@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 21:21:05 by jihyjeon          #+#    #+#             */
-/*   Updated: 2024/11/21 21:38:54 by jihyjeon         ###   ########.fr       */
+/*   Created: 2024/11/21 20:54:30 by jihyjeon          #+#    #+#             */
+/*   Updated: 2024/11/21 21:27:52 by jihyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-// void	leakc(void){
-// 	system("leaks zombie");
-// }
-
-int	main(void)
+Zombie::Zombie(std::string name)
 {
-	Zombie *new_zombie;
-	new_zombie = newZombie("heap");
-	new_zombie->announce();
-	randomChump("randomChump");
-	delete new_zombie;
-	return (0);
+	this->name = name;
+	std::cout << "Zombie " << name << " is born\n";
+}
+
+//print a message with the name of the zombie for debugging purposes
+Zombie::~Zombie(void)
+{
+	std::cout << "Zombie " << name << " has been destroyed\n";
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

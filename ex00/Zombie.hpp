@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 21:21:05 by jihyjeon          #+#    #+#             */
-/*   Updated: 2024/11/21 21:38:54 by jihyjeon         ###   ########.fr       */
+/*   Created: 2024/11/21 20:54:53 by jihyjeon          #+#    #+#             */
+/*   Updated: 2024/11/21 21:26:49 by jihyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP_
+# define ZOMBIE_HPP_
 
-// void	leakc(void){
-// 	system("leaks zombie");
-// }
+#include <iostream>
 
-int	main(void)
+class Zombie
 {
-	Zombie *new_zombie;
-	new_zombie = newZombie("heap");
-	new_zombie->announce();
-	randomChump("randomChump");
-	delete new_zombie;
-	return (0);
-}
+	private:
+		std::string	name;
+	public:
+				Zombie(std::string name);
+				~Zombie();
+		void	announce(void);
+};
+
+	Zombie* newZombie(std::string name);
+	void	randomChump(std::string name);
+
+#endif
