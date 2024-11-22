@@ -8,9 +8,9 @@ int main(int ac, char **av)
 	filename = av[1];
 	s1 = av[2];
 	s2 = av[3];
-	if (!filename.length() || !s1.length())
-		return (errorMessage("filename, s1 or s2 is an empty string"));
-	if (!filename.compare("sed"))
+	if (filename.empty() || s1.empty())
+		return (errorMessage("filename or s1 is an empty string"));
+	if (filename == "sed")
 		return (errorMessage("file to replace cannot be an executable 'sed'"));
 	inFileStream.open(filename);
 	if (inFileStream.fail())
