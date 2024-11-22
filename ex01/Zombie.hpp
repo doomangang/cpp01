@@ -6,7 +6,7 @@
 /*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:54:53 by jihyjeon          #+#    #+#             */
-/*   Updated: 2024/11/21 21:51:46 by jihyjeon         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:45:47 by jihyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ZOMBIE_HPP_
 
 #include <iostream>
+#include <sstream>
 
 class Zombie
 {

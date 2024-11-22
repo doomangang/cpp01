@@ -6,7 +6,7 @@
 /*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:51:31 by jihyjeon          #+#    #+#             */
-/*   Updated: 2024/11/22 18:41:41 by jihyjeon         ###   ########.fr       */
+/*   Updated: 2024/11/22 20:26:20 by jihyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main(int ac, char **av)
 	// open outfile stream
 	outFileStream.open(outFile);
 	if (outFileStream.fail())
-		return (errorMessage("failed to write on file: " + outFile));
+		return (errorMessage("failed to open outfile: " + outFile));
 
 	replace();
     return (SUCCESS);

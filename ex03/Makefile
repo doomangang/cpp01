@@ -1,7 +1,7 @@
 NAME	= weapon
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= HumanA.cpp\
     	HumanB.cpp\
