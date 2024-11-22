@@ -1,12 +1,12 @@
-NAME = zombie
+NAME	= zombie
 
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CC		= c++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS = Zombie.cpp	main.cpp	newZombie.cpp	randomChump.cpp
-OBJS = $(SRCS:.cpp=.o)
+SRCS	= Zombie.cpp	main.cpp	newZombie.cpp	randomChump.cpp
+OBJS	= $(SRCS:.cpp=.o)
 
-DEPS = $(OBJS:.o=.d)
+DEPS	= $(OBJS:.o=.d)
 
 all: $(NAME)
 

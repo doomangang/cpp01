@@ -1,4 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/22 17:49:54 by jihyjeon          #+#    #+#             */
+/*   Updated: 2024/11/22 18:27:11 by jihyjeon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
+
+// void    leakc(void){
+// 	system("leaks brain");
+// }
 
 int main (void)
 {
@@ -13,4 +29,5 @@ int main (void)
 	std::cout << "value of string variable: " << str << std::endl;
 	std::cout << "value pointed to by stringPTR: " << *stringPTR << std::endl;
 	std::cout << "value pointed to by stringREF: " << stringREF << std::endl;
+	// atexit(leakc);
 }

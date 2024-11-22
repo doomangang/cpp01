@@ -6,7 +6,7 @@
 /*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 20:54:53 by jihyjeon          #+#    #+#             */
-/*   Updated: 2024/11/21 21:26:49 by jihyjeon         ###   ########.fr       */
+/*   Updated: 2024/11/22 18:26:05 by jihyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class Zombie
 	private:
 		std::string	name;
 	public:
-				Zombie(std::string name);
-				~Zombie();
-		void	announce(void);
+					Zombie(std::string name);
+					~Zombie();
+		void		announce(void);
 };
 
-	Zombie* newZombie(std::string name);
-	void	randomChump(std::string name);
+	Zombie* 		newZombie(std::string name);
+	void			randomChump(std::string name);
 
 #endif

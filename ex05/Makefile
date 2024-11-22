@@ -1,12 +1,11 @@
-NAME	= weapon
+NAME	= Harl
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= HumanA.cpp\
-    	HumanB.cpp\
-    	Weapon.cpp\
-    	main.cpp
+SRCS	= Harl.cpp\
+		main.cpp
+
 
 OBJS	= $(SRCS:.cpp=.o)
 
