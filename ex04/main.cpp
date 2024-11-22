@@ -1,24 +1,55 @@
 #include "FtSed.hpp"
 
-int check_file(cbar *filename);
-
 int main(int ac, char **av)
 {
 	if (ac != 4)
-		return (FAIL);
-	if (!std::strlen(av[1]) || !s1.length() || !s2.length() )
-		return (FAIL);
-	inFileStream.open(av[1]);
+		return (errorMessage("filename, s1 or s2 is missing"));
+
+	filename = av[1];
+	s1 = av[2];
+	s2 = av[3];
+	if (!filename.length() || !s1.length())
+		return (errorMessage("filename, s1 or s2 is an empty string"));
+	if (!filename.compare("sed"))
+		return (errorMessage("file to replace cannot be an executable 'sed'"));
+	inFileStream.open(filename);
 	if (inFileStream.fail())
-		return (FAIL);
-	outFile = av[1];
+		return (errorMessage("failed to open file: " + filename));
+
+	outFile = filename;
 	outFile.append(".replace");
 	outFileStream.open(outFile);
 	if (outFileStream.fail())
-		return (FAIL);
+		return (errorMessage("failed to write on file: " + outFile));
+
+	replace();
+    return (SUCCESS);
 }
 
-int check_file(char *filename)
-{
+void    replace() {
+	std::string line;
+	while (true)
+	{
+		std::getline(inFileStream, line);
 
+		size_t idx = 0;
+		while (true) {
+			idx = line.find(s1, idx);
+			if (idx == std::string::npos)
+				break;
+			line.erase(idx, s1.length());
+			line.insert(idx, s2);
+			idx += s2.length();
+		}
+		outFileStream << line;
+		if (inFileStream.eof())
+			break;
+		outFileStream << std::endl;
+	}
+}
+
+int errorMessage(const std::string& line)
+{
+	std::cerr << line << std::endl;
+	return (FAIL);
 }
